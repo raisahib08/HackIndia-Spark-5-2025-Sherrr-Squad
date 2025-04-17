@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanShield | Insurance Protection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* CSS will be embedded for demo purposes (use external file in production) */
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #f72585;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gradient: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
+        }
+        
+        /* Add the CSS from previous example here */
+        /* Advanced additions below */
+        
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+        }
+        
+        /* Animated Underline */
+        .underline-animation {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .underline-animation:hover::after {
+            width: 100%;
+        }
+        
+        /* Dynamic FAQ */
+        .faq-item {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            padding: 15px 20px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            background: #f9f9f9;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer-inner {
+            padding: 20px;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+        
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Header (Sticky) -->
+    <header class="glass-card">
+        <div class="container">
+            <a href="/" class="logo">
+                <h1><i class="fas fa-shield-alt"></i> <span>Loan</span>Shield</h1>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="underline-animation">Home</a></li>
+                    <li><a href="#" class="underline-animation">Loans</a></li>
+                    <li><a href="#" class="underline-animation active">Insurance</a></li>
+                    <li><a href="#" class="underline-animation">Claims</a></li>
+                    <li><a href="#" class="underline-animation">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="cta-button pulse">Get Protected <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeIn">
+                <h1>Loan Protection <span>That Has Your Back</span></h1>
+                <p>Secure your financial future with our comprehensive insurance plans covering life, disability, and unemployment.</p>
+                <div class="hero-buttons">
+                    <button class="cta-button"><i class="fas fa-calculator"></i> Calculate Premium</button>
+                    <button class="outline-button"><i class="fas fa-play"></i> How It Works</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Insurance Protection">
+                <div class="trust-badge glass-card">
+                    <div class="trust-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Rated <strong>4.9/5</strong> by 2,500+ customers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Tabs -->
+    <section class="coverage-tabs">
+        <div class="container">
+            <h2 class="section-title">Tailored Coverage for Your Needs</h2>
+            <div class="tabs">
+                <div class="tab-header">
+                    <div class="tab-button active" data-tab="life">Life Cover</div>
+                    <div class="tab-button" data-tab="disability">Disability</div>
+                    <div class="tab-button" data-tab="unemployment">Unemployment</div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="life">
+                        <div class="tab-image">
+                            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Life Insurance">
+                        </div>
+                        <div class="tab-text">
+                            <h3>Life Insurance Coverage</h3>
+                            <p>Ensure your loved ones are protected. In the event of your passing, we'll cover the remaining loan balance so your family isn't burdened.</p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> 100% loan balance coverage</li>
+                                <li><i class="fas fa-check-circle"></i> No medical exam for loans under $500k</li>
+                                <li><i class="fas fa-check-circle"></i> Instant approval for qualifying applicants</li>
+                            </ul>
+                            <button class="cta-button">Get Life Cover</button>
+                        </div>
+                    </div>
+                    <!-- Other tab panes would go here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is loan protection insurance mandatory?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <p>No, loan protection insurance is optional but highly recommended. It provides financial security for you and your family in case of unexpected life events that may affect your ability to repay the loan.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- More FAQ items would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="container">
+            <h3>Trusted by leading financial institutions</h3>
+            <div class="badges">
+                <img src="https://via.placeholder.com/150x60?text=Bank+1" alt="Bank Partner">
+                <img src="https://via.placeholder.com/150x60?text=Bank+2" alt="Bank Partner">
+                <img src="https://via.placeholder.com/150x60?text=Bank+3" alt="Bank Partner">
+                <img src="https://via.placeholder.com/150x60?text=Bank+4" alt="Bank Partner">
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Dynamic FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+                
+                // Rotate chevron
+                const icon = question.querySelector('i');
+                icon.style.transform = item.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        });
+        
+        // Tab System
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons/panes
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding pane
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Animate elements when scrolling
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
